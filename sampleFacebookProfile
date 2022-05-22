@@ -1,0 +1,50 @@
+const facebookProfile = {
+    name: "Musab Mubaraq Mburaimoh",
+    friends: ["Ojuolape", "Abubakar", "Hajara"],
+    messages: ["Hello are you at home", "Hi i am coming over", "Just wait for me"],
+    postMessage: function(message){
+        this.messages.push("I am waiting for you at home");
+        return message;
+    },
+    deleteMessage: function (index){
+        this.messages.splice(2,1);
+    },
+    addFriend: function(){
+        let count = this.friends.length;
+        if(count<=3){
+            count = count + 1;
+          this.friends.push("Hauwa")
+        }
+      console.log("you have new friend");
+      console.log("Number of friends is now " + count);
+        return count;
+    },
+    removeFriend: function(){
+        let count = this.friends.length;
+        if(count>3)
+        {
+            console.log("You have reach friend threshold");
+            console.log("do you wisht to remove a fried");
+            count = count - 1;
+          this.friends.splice(1,1);
+          console.log("Number of friends is now " + count);
+            
+        }
+      
+      return count;
+    }
+}
+
+
+// text code
+console.log("Name: ", facebookProfile.name);
+console.log("Messages: ", facebookProfile.messages);
+facebookProfile.postMessage("New message!");
+console.log("Messages: ",  facebookProfile.messages);
+facebookProfile.deleteMessage(2);
+console.log("Messages: ",  facebookProfile.messages);
+console.log("Friends: ", facebookProfile.friends);
+facebookProfile.addFriend();
+console.log("Friends: ", facebookProfile.friends);
+facebookProfile.removeFriend();
+console.log("Friends: ", facebookProfile.friends);
